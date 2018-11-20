@@ -3,6 +3,13 @@ html, body {
     height: 100%;
 }
 
+button {
+    width: 100px;
+    height: 50px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
 @keyframes colorBox {
     0% {
         left: 0px; 
@@ -26,10 +33,11 @@ html, body {
 .buttonHolder {
     position: fixed;
     display: inline-block;
-    width: 100px;
+    width: 250px;
     height: 100px;
-    top: 60%;
-    left: 0%;
+    top: 1%;
+    left: 40%;
+
 }
 .redBox {
     position: relative;
@@ -38,23 +46,18 @@ html, body {
     height: 200px;
     transition: width 2s, height 2s;
     background-color: red;
+    animation-name: colorBox;
+    animation-play-state: paused;
     animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
     animation-iteration-count: infinite;
 
+
 }
 
 .redBox:hover {
     width: 300px;
     height: 300px;
-}
-
-.playButton {
-    width: 100px;
-    height: 50px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-
 }

@@ -1,15 +1,21 @@
 const playButton = document.getElementById("play");
 const redBox = document.getElementById("box");
 const stop = document.getElementById("stop");
-
-stop.onclick = function () {
-    redBox.style.animationPlayState = 'paused';
-};
+const reverse = document.getElementById("reverse");
 
 playButton.onclick = function() {
-    redBox.style.animationName = 'colorBox';
-    if (redBox.style.animationPlayState === 'paused') {
+    if (redBox.style.animationPlayState === 'paused' || redBox.style.animationPlayState === "") {
+        console.log("paused");
         redBox.style.animationPlayState = 'running';
+        playButton.innerHTML = ' Pause ';
     }
+    else if (redBox.style.animationPlayState === 'running') {
+        redBox.style.animationPlayState = 'paused';
+        playButton.innerHTML = ' Play ';
+    } 
+};
+
+reverse.onclick = function() {
+    redBox.style.animationDirection = 'alternate-reverse';
 };
 
